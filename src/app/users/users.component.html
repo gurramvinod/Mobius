@@ -1,0 +1,30 @@
+<!-- Input field -->
+<div class="main">
+    <input type="text" class="input" placeholder="enter here" name="q" #q >
+  <button type="button" (click)="ongetdata(q.value)" class="button">Primary</button>
+  <span *ngIf="flag" ><h2>Total no of users : {{total_user}} </h2></span></div>
+<!-- users table -->
+  <table width="50%" id="customers" *ngIf="flag" >
+    <tr> 
+      <th>S. No</th>
+     <th> User Name</th>
+     <th> User Details </th>
+    </tr>
+    <tr *ngFor="let com of usersdata ;let i = index" class="rows">
+      <td>{{i+1}}</td>
+      <td>{{com.login}}</td>
+      <td><button  (click)="userprofile(i)">User Details</button></td>
+    </tr>
+   </table>
+<!-- google chart -->
+   <div *ngIf="flag">
+   <google-chart #chart
+   [title]="title"
+   [type]="type"
+   [data]="resultArray"
+  
+   [options]="options"
+   [width]="width"
+   [height]="height">
+</google-chart></div>
+  

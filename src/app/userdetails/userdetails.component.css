@@ -1,0 +1,11 @@
+mat-card img{
+    object-fit: fill; /*this makes the image in src fit to the size specified below*/
+    width: 30%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+    height: 40%;
+  }
+  mat-card {
+    width: 50%;
+  }
+  .content{
+    text-align: center;
+}
